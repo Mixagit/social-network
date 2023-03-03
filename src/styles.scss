@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #202226;
+  font-family: Georgia;
+}
+.container {
+  display: block;
+  text-align: center;
+  width: 510px;
+  background-color: #2B2E34;
+  border-radius: 12px;
+  margin: 40px auto auto;
+  border: 2px solid #373A42;
+  h1 {
+    color: #F1F2F2;
+    margin-bottom: 5px;
+    font-size: 60px;
+  }
+  h2 {
+    color: #F1F2F2;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+}
+
+form {
+  display: flex;
+  padding: 20px 30px;
+  flex-direction: column;
+  align-content: center;
+
+  label {
+    color: #F1F2F2;
+  }
+  input, textarea {
+    background-color: antiquewhite;
+    width: 100%;
+    padding: 6px 10px;
+    outline: none;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  select {
+    width: 100%;
+    padding: 6px 10px;
+    outline: none;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+}
+
+button {
+  margin: 25px auto auto;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+button {
+  background-color: #212529;
+  border: none;
+}
+button:hover {
+  background-color: #040B29;
+}
+
+p {
+  color: #F1F2F2;
+}
+
+a {
+  text-decoration: none;
+  color: #0f7afc;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(15, 122, 252, 0.2);
+}
+a:hover {
+  text-decoration: none;
+  color: #cf0000;
+  border-bottom-color: rgba(208, 64, 0, 0.2);
+}
+a:visited {
+  text-decoration: none;
+  color: #800080;
+  border-bottom-color: rgba(128, 0, 128, 0.2);
+}
+.error {
+  color: #C82F41;
+  //text-shadow: 1px 1px 2px darkred;
+}
+
+img {
+  margin: 20px auto;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}

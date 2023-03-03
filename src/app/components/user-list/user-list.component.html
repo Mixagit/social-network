@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Users</h1>
+<!--  <button class="add-btn" (click)="openAddFriend()">-->
+<!--    <div *ngIf="addFriendHidden">Add</div>-->
+<!--    <div *ngIf="!addFriendHidden">Close</div>-->
+<!--  </button>-->
+  <div class="new-friend" [class.hidden]="addFriendHidden">
+    <form #userForm="ngForm" (ngSubmit)="addFriend()" novalidate>
+      <p class="error" [hidden]="!err">{{ err }}</p>
+      <div class="form-item">
+        <label for="name">User ID:</label>
+        <input
+          id="name"
+          name="content"
+          type="number"
+          required="required"
+          [(ngModel)]="userId"
+        />
+      </div>
+      <button
+        class="form-btn"
+        type="submit"
+        [disabled]="userForm.form.invalid"
+      >
+        Add Friend
+      </button>
+    </form>
+  </div>
+  <div
+    *ngFor="let user of users"
+    class="friend-field"
+    (click)="openChat(user.id)"
+  >
+    <img [src]="user.imgSrc" alt="" width="32" height="32" />
+    <p>{{ user.name }}</p>
+    <div [class.is-friend]="user.friend">
+<!--      <div *ngIf="user.friend">person</div>-->
+<!--      <div *ngIf="!user.friend">person_outline</div>-->
+    </div>
+  </div>
+</div>

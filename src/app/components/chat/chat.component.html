@@ -1,0 +1,30 @@
+<div class="container">
+<!--  <div class="header">-->
+<!--    <img [src]="friend?.imgSrs" alt="" width="32" height="32" />-->
+<!--    <p class="name">{{ friend?.name }}</p>-->
+<!--    <p class="status">{{ friend?.status }}</p>-->
+<!--  </div>-->
+  <hr />
+  <div class="chat">
+    <div *ngFor="let msg of messages" class="message opp" [class.you]="msg.you">
+      {{ msg.content }}
+    </div>
+  </div>
+  <form #userForm="ngForm" (ngSubmit)="sendMessage()" novalidate>
+    <div class="form-item">
+      <input
+        id="name"
+        name="content"
+        type="text"
+        [(ngModel)]="message"
+      />
+    </div>
+    <button
+      class="form-btn"
+      type="submit"
+      [disabled]="userForm.form.invalid"
+    >
+      Send
+    </button>
+  </form>
+</div>

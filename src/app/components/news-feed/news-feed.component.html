@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>News</h1>
+  <button class="add-btn" (click)="openCreatePost()">
+    <div *ngIf="createPostHidden">Add post</div>
+    <div *ngIf="!createPostHidden">Close add</div>
+  </button>
+  <div class="new-post" *ngIf="createPostHidden">
+    <form #userForm="ngForm" (ngSubmit)="addPost()" novalidate>
+      <div class="form-item">
+        <label for="name">Post content:</label>
+        <textarea
+          id="name"
+          name="content"
+          type="text"
+          required="required"
+          [(ngModel)]="postContent"
+        ></textarea>
+      </div>
+      <button
+        class="form-btn"
+        type="submit"
+        [disabled]="userForm.form.invalid"
+      >
+        Post
+      </button>
+    </form>
+  </div>
+  <hr />
+  <h2>Posts of my friends</h2>
+  <div *ngFor="let post of posts">
+<!--    <img [src]="post.imgSrc" alt="" width="32" height="32" />-->
+    <p class="name">{{ post.author }}</p>
+    <p class="date">{{ post.date }}</p>
+    <p class="content">{{ post.content }}</p>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container">
+  <h1>Profile</h1>
+  <hr />
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <h2>User Info</h2>
+    <p class="error" [hidden]="!err">{{ err }}</p>
+    <p>User ID: {{ id }}</p>
+    <p class="picture-p">Profile picture:</p>
+    <img [src]="form.image" alt="" width="70" height="70" />
+    <div class="form-item">
+      <label for="name">Username</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required="required"
+        [(ngModel)]="form.name"
+      />
+    </div>
+    <div class="form-item">
+      <label>Date of birth</label>
+      <input
+        name="date"
+        required="required"
+        [(ngModel)]="form.date"
+      />
+    </div>
+    <div class="form-item">
+      <label>Avatar link</label>
+      <input
+        name="avatar"
+        required="required"
+        [(ngModel)]="form.image"
+      />
+    </div>
+    <button
+      class="form-btn edit-btn"
+      type="submit"
+      [disabled]="userForm.form.invalid"
+    >
+      Edit
+    </button>
+    <button
+      class="form-btn delete-btn"
+      (click)="deleteAcc($event)"
+    >
+      Delete account
+    </button>
+  </form>
+  <div class="admin" *ngIf="isAdmin">
+    <hr />
+    <h2>Admin mode</h2>
+    <button (click)="goAdmin()">Go admin mode</button>
+    <hr />
+  </div>
+  <button class="exit-btn" (click)="logout()">
+    Sign out
+  </button>
+</div>

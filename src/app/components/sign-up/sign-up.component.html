@@ -1,0 +1,65 @@
+<div class="container">
+  <h1>Sign up</h1>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <p class="error" [hidden]="!err">{{ err }}</p>
+    <div class="form-item">
+      <label for="name">Username</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required="required"
+        [(ngModel)]="form.name"
+      />
+    </div>
+    <div class="form-item">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required="required"
+        [(ngModel)]="form.email"
+      />
+    </div>
+    <div class="form-item">
+      <label>Date of birth</label>
+      <input
+        name="date"
+        required="required"
+        [(ngModel)]="form.date"
+      />
+    </div>
+    <div class="form-item">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required="required"
+        [(ngModel)]="form.password"
+      />
+    </div>
+    <div class="form-item">
+      <label for="password1">Confirm password</label>
+      <input
+        id="password1"
+        name="password1"
+        type="password"
+        required="required"
+        [(ngModel)]="form.password1"
+      />
+    </div>
+    <button
+      type="submit"
+      [disabled]="userForm.form.invalid"
+      type="submit"
+    >
+      Sign up
+    </button>
+  </form>
+  <p>
+    Already have an account?
+    <a [routerLink]="['/login']"> Sign In </a>
+  </p>
+</div>

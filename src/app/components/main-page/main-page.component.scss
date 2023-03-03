@@ -1,0 +1,16 @@
+div {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: darkred;
+    transition: color 200ms ease-in-out;
+    &:hover{
+      color: red;
+    }
+  }
+}
